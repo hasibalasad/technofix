@@ -16,11 +16,14 @@ function UserList() {
     return (
         <div className="container mx-auto mt-8">
             <h1 className="text-2xl font-bold mb-4">User List</h1>
-            {users.map((user) => (
-                <Link to={`/user/${user.id}`} key={user.id}>
-                    <UserListItem key={user.id} user={user} />
-                </Link>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-3">
+                {users.map((user) => (
+
+                    <Link to={`/user/${user.id}`} key={user.id}>
+                        <UserListItem key={user.id} user={user} />
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }
