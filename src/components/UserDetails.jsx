@@ -17,17 +17,16 @@ function UserDetails() {
         dispatch(fetchSingleUser(id))
     }, [dispatch, id])
     return (
-        <div className="container mx-auto mt-8">
-            <h1 className="text-2xl font-bold mb-4">User Details</h1>
-            <div>
+        <div className="container mx-auto  w-2/3 border-2 bg-slate-200 p-6">
+            <div className="flex justify-center my-4">
                 <img src={image} alt={firstName} />
             </div>
-            <div>
-                <p>{firstName} {lastName}</p>
-                <p>{email}</p>
-                <p>{company?.name}</p>
-                <p>{address?.address}</p>
-                <p>{address?.city}</p>
+            <div className="text-center flex flex-col gap-2">
+                <h1 className="text-3xl font-bold">{firstName} {lastName}</h1>
+                <p className="text-gray-600">{email}</p>
+                <p className="text-gray-600">{company?.name}</p>
+                <p className="text-gray-600">{address?.address}</p>
+                <p className="text-gray-600">{address?.city}</p>
             </div>
         </div>
     )
